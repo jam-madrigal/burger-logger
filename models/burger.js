@@ -20,4 +20,3 @@ const burger = {
 
   };
 
-burger.updateOne(false, "Big Bang Burger");
