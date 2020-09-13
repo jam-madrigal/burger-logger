@@ -9,23 +9,23 @@ const orm = {
       });
     },
 
-    insertOne: function(name, devoured) {
+    insertOne: function(name, devoured, cb) {
         let queryString = `INSERT INTO burgers (burger_name, devoured) VALUES (?, ?)`
         console.log(queryString);
         name.toString();
         connection.query(queryString, [name, devoured], (err, result) => {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     },
 
-    updateOne: function(devoured, nameToUpdate) {
+    updateOne: function(devoured, nameToUpdate, cb) {
         let queryString = "UPDATE burgers SET devoured = ? WHERE burger_name = ?"
         console.log(queryString);
         nameToUpdate.toString();
         connection.query(queryString, [devoured, nameToUpdate], (err, result) => {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     },
 };

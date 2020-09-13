@@ -6,16 +6,16 @@ const burger = {
         cb(res);
       });
     },
-    insertOne: (name, devoured) => {
-        orm.insertOne(name, devoured, (res => {
-            console.log(res);
-        }));
+    insertOne: (name, devoured, cb) => {
+        orm.insertOne(name, devoured, (res) => {
+            cb(res);
+        });
     },
 
-    updateOne: (devoured, nameToUpdate) => {
-        orm.updateOne(devoured, nameToUpdate,(res => {
-            console.log(res);
-        }));
+    updateOne: (devoured, nameToUpdate, cb) => {
+        orm.updateOne(devoured, nameToUpdate, (res) => {
+            cb(res);
+        });
     },
 
   };
