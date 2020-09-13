@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const burger = require("../models/burger.js");
 
+// When the main page is loaded, GET
 router.get("/", (req, res) => {
   burger.selectAll((data) => {
     let hbsObject = {
@@ -12,6 +13,7 @@ router.get("/", (req, res) => {
   });
 });
 
+// POST to be used to add a new burger
 router.post("/api/burgers", (req, res) => {
     burger.insertOne([
       "name", "devoured"
@@ -22,7 +24,8 @@ router.post("/api/burgers", (req, res) => {
     });
 });
 
-router.put("/api/cats/:id", function(req, res) {
+// PUT to be used to update a burgers status as being devoured or not
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);

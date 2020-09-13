@@ -1,5 +1,6 @@
 const orm = require("../config/orm");
 
+// Calling back the functions defined in the orm
 const burger = {
     selectAll: (cb) => {
       orm.selectAll("burgers", (res) => {

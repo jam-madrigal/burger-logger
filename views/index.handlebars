@@ -1,7 +1,7 @@
 <h1>Burgers</h1>
 
 <h2>Fresh Burgers</h2>
-
+{{!-- Looping through each burger in the database and generating html, putting it in a fresh burger list or ded burger list depending on devoured state --}}
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
@@ -20,6 +20,7 @@
   {{/each}}
 </ul>
 
+{{!-- Form to submit new burgers --}}
 <h2>Add a burger</h2>
 <form class="create-form">
 

@@ -1,5 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
+$(document).ready(function() {
+    // Adding an event listener to the devoured buttons to change the devoured boolean in the db
     $(".change-devoured").on("click", (event) => {
       let id = $(this).data("id");
       console.log(id);
