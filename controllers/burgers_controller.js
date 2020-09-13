@@ -26,7 +26,7 @@ router.post("/api/burgers", (req, res) => {
 
 // PUT to be used to update a burgers status as being devoured or not
 router.put("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  let condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
