@@ -12,7 +12,8 @@ const connection = mysql.createConnection({
     user: 'root',
     password: 'programmingsocks',
     database: 'burgers_db'
-});
+})
+};
 
 // Connecting to it...
 connection.connect();
