@@ -15,7 +15,7 @@
 
 # Description
 This is a web application that can be used to play around with adding burgers to a database, changing their status in the database, and add and delete burgers to and from a database.
-![Screenshot]()
+![Screenshot](https://github.com/jam-madrigal/burger-logger/blob/master/public/assets/burgersapp.png?raw=true)
 
 # Usage
 Use this to add stuff to a list, essentially, and change its category.
