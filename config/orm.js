@@ -36,21 +36,21 @@ const orm = {
             cb(result);
         });
     },
+    // Function to delete a burger
+    delete: function(condition, cb) {
+        let queryString = "DELETE FROM burgers WHERE "
+        queryString += condition;
+        console.log(queryString);
+    
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+      }
 
-    // unDevour: function(devoured, condition, cb) {
-    //     // It has to be broken up this way to prevent truncated sql errors, ie; values inside single quotes within the query which does not work
-    //     let queryString = "UPDATE burgers SET devoured = "
-    //     queryString += devoured;
-    //     queryString += ' WHERE '
-    //     queryString += condition;
-
-    //     console.log(queryString);
-
-    //     connection.query(queryString, (err, result) => {
-    //         if (err) throw err;
-    //         cb(result);
-    //     });
-    // },
 };
 
 module.exports = orm;

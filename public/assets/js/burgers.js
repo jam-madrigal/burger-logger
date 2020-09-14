@@ -4,7 +4,6 @@ $(document).ready(function() {
     $(".change-devoured").on("click", function(event) {
       let id = $(this).data("id");
       let burgerEat = $(this).data("devoured");
-      let burgerName = $(this).data("name");
       
       let newDevouredState = {
         devoured: true
@@ -22,6 +21,44 @@ $(document).ready(function() {
         }
       );
     });
+
+    $(".un-eat").on("click", function(event) {
+        let id = $(this).data("id");
+        let burgerEat = $(this).data("devoured");
+        
+        let newDevouredState = {
+          devoured: false
+        };
+    
+        // Send the PUT request.
+        $.ajax("/api/burgers/" + id, {
+          type: "PUT",
+          data: newDevouredState
+        }).then(
+          function() {
+            console.log("changed devoured state to", burgerEat);
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
+
+    // Adding an event listener for the delete button
+    $(".delete-burger").on("click", function(event) {
+        let id = $(this).data("id");
+    
+        // Send the DELETE request.
+        $.ajax("/api/burgers/" + id, {
+          type: "DELETE"
+        }).then(
+          function() {
+            console.log("deleted burger", id);
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+    });
+      
 
     
 
