@@ -1,22 +1,21 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
     // Adding an event listener to the devoured buttons to change the devoured boolean in the db
-    $(".change-devoured").on("click", (event) => {
+    $(".change-devoured").on("click", function(event) {
       let id = $(this).data("id");
-      console.log(id);
-      let burgerEat = $(this).data("true");
+      let burgerEat = $(this).data("devoured");
+      let burgerName = $(this).data("name");
   
       let newDevouredState = {
-        devoured: burgerEat
+        devoured: true
       };
-
   
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: newDevouredState
       }).then(
-        () => {
+        function() {
           console.log("changed devoured state to", burgerEat);
           // Reload the page to get the updated list
           location.reload();

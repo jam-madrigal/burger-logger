@@ -2,7 +2,7 @@
     {{!-- The list of burgers from the db, with buttons to devour them if they are not yet devoured, and a button that says the burger is eaten if it has been devoured already --}}
 	{{burger_name}}
 
-	<button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
+	<button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}" data-name="{{burger_name}}"">
 		{{#if devoured}}Burger eaten!{{else}}Eat da burger!{{/if}}
 	</button>
 </li>
