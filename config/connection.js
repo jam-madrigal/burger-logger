@@ -16,9 +16,11 @@ const connection = mysql.createConnection({
 
 // Connecting to it...
 connection.connect();
- };
 
 // This prevents the unhandled promise error from running viewAllTables() without it and allows async/await syntax 
 connection.query = util.promisify(connection.query);
+};
+
+
 
 module.exports = connection;
